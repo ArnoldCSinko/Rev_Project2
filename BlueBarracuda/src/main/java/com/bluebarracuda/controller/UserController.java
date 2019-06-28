@@ -76,19 +76,7 @@ public class UserController {
 		return userRepo.selectByUsername(username);
 	}
 
-	/**
-	 * @param username
-	 * @param password
-	 * @return 
-	 */
-	@PostMapping(value="/authenticate")
-	public @ResponseBody User login(@RequestParam("username") String username, @RequestParam("password") String password) {
-		System.out.println("In Auth, Username input: " + username);
-		User tmp = userRepo.selectByUsername(username);
-		if(tmp.getPassword() == password)
-			return userRepo.selectByUsername(username);
-		else return null;
-	}
+	
 	
 
 }
